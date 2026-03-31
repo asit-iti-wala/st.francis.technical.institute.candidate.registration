@@ -1,0 +1,251 @@
+/* Base Black & White Theme */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Container Settings */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.welcome-screen {
+    max-width: 800px;
+    padding: 40px 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    padding: 14px;
+    border: 2px solid #ffffff;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #aaaaaa;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+button {
+    background: #ffffff;
+    color: #000000;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover:not(:disabled) {
+    background: #cccccc;
+    border-color: #cccccc;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Hiding Elements */
+.hidden {
+    display: none !important;
+}
+
+/* Welcome Text Animations */
+.main-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s forwards ease-out;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    color: #cccccc;
+    display: block;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s forwards ease-out 0.6s;
+}
+
+/* QR Code Section */
+.qr-section {
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s forwards ease-out 1.2s;
+}
+
+.qr-code {
+    display: inline-block;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.qr-code img {
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.qr-text {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #cccccc;
+    font-weight: 700;
+}
+
+/* Social Links Section */
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 500px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s forwards ease-out 1.8s;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid #ffffff;
+}
+
+.social-btn:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.social-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Specific button colors on hover */
+.social-btn.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-color: #e6683c;
+    color: #ffffff;
+}
+
+.social-btn.whatsapp:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: #ffffff;
+}
+
+.social-btn.website:hover {
+    background: #4285f4;
+    border-color: #4285f4;
+    color: #ffffff;
+}
+
+.social-btn.email:hover {
+    background: #EA4335;
+    border-color: #EA4335;
+    color: #ffffff;
+}
+
+/* Refresh Text */
+.refresh-text {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #888888;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards ease-out 2.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive scaling for mobile */
+@media (max-width: 600px) {
+    .main-title { 
+        font-size: 2rem; 
+    }
+    .sub-title { 
+        font-size: 1.2rem; 
+    }
+    .social-links {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    .qr-code img {
+        width: 150px;
+        height: 150px;
+    }
+    .social-btn {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+    }
+}
